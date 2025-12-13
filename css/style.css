@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #555;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  transition: 1s background;
+}
+
+body>div {
+  text-align: center;
+}
+
+img {
+  width: 80vmin;
+  height: 80vmin;
+}
+
+@keyframes roll {
+  25% { transform: rotate(95deg) }
+  50% { transform: rotate(180deg) }
+  75% { transform: rotate(-95deg) }
+}
+
+footer {
+  position: fixed;
+  bottom: 2vmin;
+  right: 2vmin;
+  padding: 1.5vmax 2vmax;
+  border-radius: 2vmax;
+  font-size: 3vmax;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  text-align: center;
+}
+
+footer:hover {
+  background: rgba(0,0,0,.7);
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    padding: 2vmax 3vmax;
+    border-radius: 3vmax;
+    font-size: 5vmax;
+  }
+}
