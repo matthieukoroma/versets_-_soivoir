@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
       nums[i] = Math.ceil(16 * Math.random());
       setTimeout(function() {
         die.style.animation = "";
-        die.src = "a/" + nums[i] + ".svg";
+        die.src = "a/" + nums[i] + ".pdf";
         die.alt = nums[i];
       }, 1000);
     }
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < n; i++) {
       
       let die = document.createElement("img");
-      die.src = "a/title.svg";
+      die.src = "a/title.pdf";
       container.appendChild(die);
       dice.push(die);
       
