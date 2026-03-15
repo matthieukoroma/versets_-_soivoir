@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // initializations
   var container = document.querySelector("div");
   var dice = [document.querySelector("img")];
-  var nums = [0];
+  var nums = [2];
   var colors = [
     "255, 87, 34",
     "76, 175, 80",
