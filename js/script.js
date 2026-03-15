@@ -16,6 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
     "33, 150, 243",
     "63, 81, 181",
     "244, 143, 177",
+    "121, 85, 72",
+    "76, 175, 80",
+    "33, 150, 243",
+    "63, 81, 181",
+    "244, 143, 177",
     "121, 85, 72"
 
   ];
@@ -32,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
       
       if (die.style.animation) return;
       sound = new Audio("c/" + nums[i] + ".wav");
+      sound.load();
       sound.play();
   
       nums[i] = Math.ceil(16 * Math.random());
@@ -49,15 +55,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   document.addEventListener("keydown", roll);
-  document.addEventListener("click", roll);
-
-  sound.load();
-  
+  document.addEventListener("click", roll);  
   
   // alter number of dice
   function numDice(n) {
     
-    if (n > 9) n = 1;
+    if (n > 16) n = 0;
     
     container.innerHTML = "";
     dice = [];
