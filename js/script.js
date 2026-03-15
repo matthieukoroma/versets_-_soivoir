@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
   var container = document.querySelector("div");
   var dice = [document.querySelector("img")];
   var nums = [2];
-  var sound = new Audio("a/roll.mp3");
   var colors = [
     "255, 87, 34",
     "76, 175, 80",
@@ -32,13 +31,14 @@ document.addEventListener("DOMContentLoaded", function() {
       let die = dice[i];
       
       if (die.style.animation) return;
-      die.style.animation = "roll 1s";
+      sound = new Audio("c/" + nums[i] + ".wav");
       sound.play();
   
       nums[i] = Math.ceil(16 * Math.random());
       setTimeout(function() {
         die.style.animation = "";
-        die.src = "a/" + nums[i] + ".jpg";
+        die.src = "c/" + nums[i] + ".jpg";
+
         die.alt = nums[i];
       }, 1000);
     }
@@ -65,28 +65,16 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < n; i++) {
       
       let die = document.createElement("img");
-      die.src = "a/title.jpg";
+      die.src = "c/title.jpg";
       container.appendChild(die);
       dice.push(die);
-      
-      let two = n >= 2 && n <= 4;
-      let three = n == 5 || n == 6 || n == 9;
-      let four = n == 7 || n == 8;
-      let six = n == 9;
-      let breaks = [false, false, two, three, four, false, six];
-      if (breaks[i + 1])
-        container.appendChild(document.createElement("br"));
-        
-      let size = 80 / breaks.indexOf(true);
-      die.style.width = size + "vmin";
-      die.style.height = size + "vmin";
-        
+            
     }
     
   }
   
   document.querySelector("#js-increase").addEventListener("click", function() {
-    if (dice.length < 9)
+    if (dice.length < 17)
       numDice(dice.length + 1);
   });
 
