@@ -36,11 +36,12 @@ document.addEventListener("DOMContentLoaded", function() {
       let die = dice[i];
       
       if (die.style.animation) return;
-      sound = new Audio("c/" + nums[i] + ".wav");
+      sound = new Audio("soundsmp3/" + nums[i] + ".mp3");
       sound.load();
       sound.play();
   
-      nums[i] = Math.ceil(16 * Math.random());
+      nums[i] = i 
+      // Math.ceil(16 * Math.random());
       setTimeout(function() {
         die.style.animation = "";
         die.src = "c/" + nums[i] + ".jpg";
