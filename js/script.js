@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // initializations
   var container = document.querySelector("div");
   var dice = [document.querySelector("img")];
-  var nums = [2];
+  var nums = [];
   var colors = [
     "255, 87, 34",
     "76, 175, 80",
@@ -36,12 +36,14 @@ document.addEventListener("DOMContentLoaded", function() {
       let die = dice[i];
       
       if (die.style.animation) return;
+ 
+      nums[i] = i;
+      // Math.ceil(16 * Math.random());
+
       sound = new Audio("soundsmp3/" + nums[i] + ".mp3");
       sound.load();
       sound.play();
-  
-      nums[i] = i;
-      // Math.ceil(16 * Math.random());
+
       setTimeout(function() {
         die.style.animation = "";
         die.src = "c/" + nums[i] + ".jpg";
@@ -55,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.style.background = "rgb(" + color + ")";
     
   }
-
   document.addEventListener("keydown", roll);
   document.addEventListener("click", roll);  
   
