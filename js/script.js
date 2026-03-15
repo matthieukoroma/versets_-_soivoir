@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // initializations
   var container = document.querySelector("div");
   var dice = [document.querySelector("img")];
-  var nums = [2];
+  var nums = [0];
   var colors = [
     "255, 87, 34",
     "76, 175, 80",
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
       sound.load();
       sound.play();
   
-      nums[i] = i 
+      nums[i] = i;
       // Math.ceil(16 * Math.random());
       setTimeout(function() {
         die.style.animation = "";
@@ -50,7 +50,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }, 1000);
     }
     
-    let color = colors[Math.ceil(16 * Math.random()) - 1];
+    let color = colors[i - 1]; 
+      // colors[Math.ceil(16 * Math.random()) - 1];
     document.body.style.background = "rgb(" + color + ")";
     
   }
